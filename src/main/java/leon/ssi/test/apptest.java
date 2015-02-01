@@ -9,7 +9,10 @@ public class apptest {
 	public static void main(String[] args) {
 		String path = System.getProperty("user.dir");
 		ApplicationContext ctx = new FileSystemXmlApplicationContext(path
-				+ "\\src\\main\\resources\\spring\\applicationContext.xml");
+//				+ "\\src\\main\\resources\\spring\\applicationContext.xml");
+//		+ "\\src\\main\\resources\\spring\\testContext.xml");
+		+ "\\src\\main\\resources\\spring\\bean.xml");
+		System.out.println("end...");
 	}
 
 }
