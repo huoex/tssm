@@ -24,7 +24,7 @@
 			</list>
 		</property>
 	</bean>
-	 
+	
 	<bean id="commonsConfigurationFactoryBean" class="leon.ssi.util.CommonsConfigurationFactoryBean"
 		p:encryptor-ref="configurationEncryptor" p:systemPropertiesModeName="SYSTEM_PROPERTIES_MODE_OVERRIDE"> 
 		<constructor-arg>
@@ -34,7 +34,6 @@
 		</constructor-arg>
 	</bean>
 	
-
 	<bean id="propertiesConfiguration" factory-bean="&amp;commonsConfigurationFactoryBean"
 		factory-method="getConfiguration" />
 	<bean id="methodLoggerAdvisor" class="leon.ssi.util.LoggerAdvice" />
@@ -48,4 +47,5 @@
 		</aop:aspect>
 	</aop:config>
     
+    <import resource="dataSource.xml"/>
 </beans>

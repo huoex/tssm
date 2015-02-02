@@ -18,9 +18,9 @@ public class apptest {
 	public static void main(String[] args) throws Exception {
 		String path = System.getProperty("user.dir");
 		ApplicationContext ctx = new FileSystemXmlApplicationContext(path
-				+ "\\src\\main\\resources\\spring\\applicationContext.xml");
+//				+ "\\src\\main\\resources\\spring\\applicationContext.xml");
 		// + "\\src\\main\\resources\\spring\\testContext.xml");
-		// + "\\src\\main\\resources\\spring\\bean.xml");
+		 + "\\src\\main\\resources\\spring\\bean.xml");
 		
 //		LoginService ls = (LoginService) ctx.getBean("loginServiceImpl");
 //		Map search = new HashMap<String, String>();
@@ -36,9 +36,12 @@ public class apptest {
 //		addstu.put("stdName", "b2");
 //		sdao.addStudent(addstu);
 		
-		simpleJDBC jdbc = (simpleJDBC)ctx.getBean("simpleJDBC");
+//		simpleJDBC jdbc = (simpleJDBC)ctx.getBean("simpleJDBC");
+//		
+//		jdbc.getJdbc().update("INSERT INTO t_student (student_id,student_name) VALUES ('98','d11');");
 		
-		jdbc.getJdbc().update("INSERT INTO t_student (student_id,student_name) VALUES ('98','d11');");
+		stuAdd add = (stuAdd)ctx.getBean("stuAdd");
+		add.insertStuent();
 
 		System.out.println("end...");
 	}

@@ -73,5 +73,5 @@
 		<property name="jdbc" ref="simpleJdbcTemplat"/>
 	</bean>
 	
-    
+
 </beans>
