@@ -1,0 +1,11 @@
+grant select,insert,update,delete on *.* to user2@localhost  Identified by "user2";
+
+INSERT INTO t_student (student_id,student_name) VALUES ('66','d11');
+
+select * from t_student;
+
+COMMIT;
+
+SET autocommit = 1;
+
+show variables like 'autocommit';

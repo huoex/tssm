@@ -8,7 +8,7 @@
        http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.0.xsd
        http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.0.xsd
        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd">
-	
+
 	<context:property-placeholder location="classpath:jdbc.properties" />
 	<bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource" destroy-method="close">
 		<property name="driverClass" value="${jdbc.driverClassName}"/>
@@ -20,9 +20,11 @@
 		<property name="maxPoolSize" value="5"/>
 		<property name="acquireIncrement" value="1"/>
 		<property name="maxIdleTime" value="5"/>
+		<property name="autoCommitOnClose"  value="false"/>
 	</bean>
 	
 	
+
 	<bean id="ibatisSessionFactory" class="leon.ssi.ibatis.IBatisSQLSessionFactoryBean" scope="singleton">    
         <property name="configLocation" value="ibatis-config.xml"></property>
         <property name="dataSource" ref="dataSource"></property>
@@ -55,10 +57,21 @@
 			<tx:method name="*" propagation="REQUIRED" rollback-for="java.lang.Exception" />
 		</tx:attributes>
 	</tx:advice>
-
+	
+	<!-- 
 	<aop:config>
 		<aop:pointcut id="serviceMethod" expression="execution(* leon.ssi.service.impl.*.*(..))" />
 		<aop:advisor advice-ref="txAdvice" pointcut-ref="serviceMethod" />
 	</aop:config>
+	-->
+	
+	<bean id="simpleJdbcTemplat" class="org.springframework.jdbc.core.simple.SimpleJdbcTemplate">
+		<constructor-arg ref="dataSource"/>
+	</bean>
+	
+	<bean id="simpleJDBC" class="leon.ssi.test.simpleJDBC">
+		<property name="jdbc" ref="simpleJdbcTemplat"/>
+	</bean>
+	
     
 </beans>

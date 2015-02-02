@@ -35,6 +35,7 @@ public class StudentDAOImpl extends IBatisDAOSupport<StudentDAO> implements
 		} catch (Exception e) {
 			throw new Exception(e);
 		} finally {
+//			System.out.println("session not close");
 			this.closeSqlSession(session);
 		}
 	}

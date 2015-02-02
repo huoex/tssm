@@ -65,4 +65,4 @@ insert  into `t_user`(`id`,`username`,`password`,`role_id`) values ('1','abc','a
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
 /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
 /*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
-/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;/*Table structure for table `t_student` */DROP TABLE IF EXISTS `t_student`;CREATE TABLE `t_student` (  `student_id` varchar(10) DEFAULT NULL,  `student_name` varchar(30) DEFAULT NULL) ENGINE=InnoDB DEFAULT CHARSET=utf8;

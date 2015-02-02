@@ -31,7 +31,7 @@
     </select>
 
     <update id="addStudent" parameterType="java.util.Map">
-        insert into t_student(student_id, student_name)values(seq_student_no.nextval,#{stdName})
+        insert into t_student(student_id, student_name)values(#{stdId},#{stdName})
     </update>
 
     <update id="delStudent" parameterType="java.util.Map">
