@@ -149,11 +149,19 @@
 			<artifactId>spring-modules-jakarta-commons</artifactId>
 			<version>0.8</version>
 		</dependency>
+
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
 			<version>3.8.1</version>
 			<scope>test</scope>
+		</dependency>
+		
+		<!-- dbcp -->
+		<dependency>
+		    <groupId>commons-dbcp</groupId>
+		    <artifactId>commons-dbcp</artifactId>
+		    <version>1.4</version>
 		</dependency>
 	</dependencies>
 	<build>
