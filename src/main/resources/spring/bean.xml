@@ -16,9 +16,17 @@
 	</bean>
 	 -->
 	
+	<!-- 
     <bean id="connUtils" class="leon.ssi.test.connUtils"/>
 
     <bean id="stuAdd" class="leon.ssi.test.stuAdd">
     	<property name="conn" ref="connUtils"/>
     </bean>
+     -->
+
+     <bean id="iniBean" class="leon.ssi.test.iniBean"/>
+     <!-- 
+     <bean id="iniBean" class="leon.ssi.test.iniBean" lazy-init="true" scope="singleton"/>
+     <bean id="iniBean2" class="leon.ssi.test.iniBean2" lazy-init="true" scope="singleton"/>
+     -->
 </beans>

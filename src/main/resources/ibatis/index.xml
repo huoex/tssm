@@ -52,4 +52,5 @@
 			INNER JOIN teacher t ON c.tid=t.tid
 		WHERE s.sid=#{studentId,jdbcType=VARCHAR}
     </select>
+    
 </mapper>
