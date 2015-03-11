@@ -22,12 +22,13 @@ DROP TABLE IF EXISTS `course`;
 
 CREATE TABLE `course` (
   `cid` varchar(10) DEFAULT NULL,
-  `cname` varchar(20) DEFAULT NULL
+  `cname` varchar(20) DEFAULT NULL,
+  `tid` varchar(10) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 /*Data for the table `course` */
 
-insert  into `course`(`cid`,`cname`) values ('1','java');
+insert  into `course`(`cid`,`cname`,`tid`) values ('1','java','1');
 
 /*Table structure for table `student` */
 

@@ -49,7 +49,7 @@
 		FROM student s
 			INNER JOIN student_course sc ON s.sid=sc.sid
 			INNER JOIN course c ON c.cid=sc.cid
-			INNER JOIN teacher t ON c.cid=t.tid
+			INNER JOIN teacher t ON c.tid=t.tid
 		WHERE s.sid=#{studentId,jdbcType=VARCHAR}
     </select>
     
